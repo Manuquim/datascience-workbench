@@ -1,0 +1,44 @@
+{
+  "environment": {
+    "os": "Windows-11-10.0.26200-SP0",
+    "python": "3.14.3",
+    "duckdb": "1.5.6",
+    "machine": "AMD64"
+  },
+  "rows": 1000000,
+  "columns": 6,
+  "parquet_bytes": 1128319,
+  "duckdb_memory_limit": "128MB",
+  "threads": 1,
+  "temp_limit": "2GB",
+  "seconds": {
+    "group_percentage": 13.584,
+    "histogram": 0.089,
+    "scatter": 0.173,
+    "correlation": 0.428,
+    "profile": 0.949
+  },
+  "results": {
+    "group_percentage": {
+      "used_rows": 1000000,
+      "displayed_results": 4,
+      "sampled": false
+    },
+    "histogram": {
+      "used_rows": 1000000,
+      "displayed_results": 40,
+      "sampled": false
+    },
+    "scatter": {
+      "used_rows": 1000000,
+      "displayed_results": 1000,
+      "sampled": true
+    },
+    "correlation": {
+      "used_rows": 1000000,
+      "displayed_results": 4,
+      "sampled": false
+    }
+  },
+  "scope": "Synthetic compressed Parquet, full-data calculations. Does not measure total process RSS or certify arbitrary multi-GB files. DuckDB memory_limit is not a hard process memory limit."
+}

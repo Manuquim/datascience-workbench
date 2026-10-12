@@ -1,0 +1,15 @@
+{
+  "name": "Ingresos por región",
+  "explanation": "Elimina filas completamente duplicadas y calcula ingreso y coste por región. Los grupos con región nula se conservan.",
+  "steps": [
+    {"op": "deduplicate"},
+    {"op": "aggregate", "columns": ["region"], "metrics": [
+      {"function": "sum", "column": "ingreso", "alias": "ingreso_total"},
+      {"function": "sum", "column": "coste", "alias": "coste_total"}
+    ]},
+    {"op": "ratio", "column": "coste_total", "denominator": "ingreso_total", "alias": "ratio_coste"},
+    {"op": "sort", "columns": ["ingreso_total"], "descending": true}
+  ],
+  "charts": [{"kind": "bar", "x": "region", "y": "ingreso_total", "title": "Ingresos por región"}],
+  "questions": []
+}
